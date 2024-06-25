@@ -65,11 +65,11 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Label("Alpha"),
-            dcc.Slider(id='alpha-slider', min=0.01, max=1.0, step=0.01, value=0.5)
+            dcc.Slider(id='alpha-slider', min=0.0, max=1.0, step=0.1, value=0.5)
         ], width=2),
         dbc.Col([
             dbc.Label("Beta"),
-            dcc.Slider(id='beta-slider', min=0.01, max=1.0, step=0.01, value=0.5)
+            dcc.Slider(id='beta-slider', min=0.0, max=1.0, step=0.1, value=0.5)
         ], width=2),
         dbc.Col([
             dbc.Label("Date Range"),
@@ -179,4 +179,4 @@ def update_graphs(objective, selected_products, budget_threshold, alpha, beta, s
     return fig_adstock, fig_diminishing, fig_sales_ad, fig_budget_product, fig_budget_ad, fig_uplift
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True,port=4000)
